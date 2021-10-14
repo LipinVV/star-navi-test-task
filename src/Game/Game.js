@@ -96,12 +96,28 @@ export const Game = () => {
         gridColumn: '1 / span all',
     }
 
+    const selectStyles = {
+        marginRight: '20px',
+        cursor: 'pointer',
+    }
+
+    const startButtonStyles = {
+        textTransform: 'upperCase',
+        backgroundColor: 'lightblue',
+        fontStyle: 'bold',
+        border: 'none',
+        minWidth: '100px',
+        minHeight: '25px',
+        borderRadius: '5px',
+        cursor: currentGameMode === 'modeIsNotChosen' ? 'not-allowed' : 'pointer',
+    }
+
     return (
         <div style={mainTemplateStyles}>
             <section style={gameSectionTemplateStyles}>
                 <div style={selectGameModeStyles}>
                     <select
-                        style={{marginRight: '20px'}}
+                        style={selectStyles}
                         onChange={evt => {
                             setCurrentGameMode(evt.target.value);
                             setSquareCoordinates([]);
@@ -121,15 +137,7 @@ export const Game = () => {
                     </select>
                     <button
                         disabled={currentGameMode === 'modeIsNotChosen'}
-                        style={{
-                            textTransform: 'upperCase',
-                            backgroundColor: 'lightblue',
-                            border: 'none',
-                            minWidth: '100px',
-                            minHeight: '25px',
-                            borderRadius: '5px',
-                            cursor: 'pointer'
-                        }}
+                        style={startButtonStyles}
                         type='button'
                         onClick={() => {
                             setGameStartTrigger(true);
