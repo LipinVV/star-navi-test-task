@@ -1,2 +1,2 @@
 # StarNaviTestTask
-a tesk task from StartNavi company
+a tesk task for StartNavi company
