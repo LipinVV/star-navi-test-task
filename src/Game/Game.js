@@ -96,7 +96,6 @@ export const Game = () => {
         gridColumn: '1 / span all',
     }
 
-    const [trigger, setTrigger] = useState(false)
     return (
         <div style={mainTemplateStyles}>
             <section style={gameSectionTemplateStyles}>
@@ -106,7 +105,6 @@ export const Game = () => {
                         onChange={evt => {
                             setCurrentGameMode(evt.target.value);
                             setSquareCoordinates([]);
-                            setTrigger(true)
                         }}
                     >
                         {currentGameMode === 'modeIsNotChosen' && <option value={'modeIsNotChosen'}>Pick mode</option>}
@@ -122,7 +120,7 @@ export const Game = () => {
                         })}
                     </select>
                     <button
-                        disabled={currentGameMode === 'modeIsNotChosen' || trigger === false}
+                        disabled={currentGameMode === 'modeIsNotChosen'}
                         style={{
                             textTransform: 'upperCase',
                             backgroundColor: 'lightblue',
