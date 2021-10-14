@@ -4,7 +4,7 @@ import React from "react";
 
 
 export const fetchServerData = () => {
-  return fetch(`http://demo1030918.mockable.io/`).then(response => {
+  return fetch(`https://demo1030918.mockable.io/`).then(response => {
     return response.json();
   }).then(data => {
     return data
