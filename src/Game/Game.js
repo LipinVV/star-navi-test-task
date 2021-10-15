@@ -32,7 +32,7 @@ export const Game = () => {
     const [hoveredSquares, setHoveredSquares] = useState([]);
     const [squareCoordinates, setSquareCoordinates] = useState([]);
 
-    function flipCard(squareIndex) {
+    const hoverCardHandler = squareIndex => {
         setHoveredSquares(square => [...square, squareIndex]);
         setSquareCoordinates(coordinates => {
             return [...coordinates, {
@@ -158,7 +158,7 @@ export const Game = () => {
                         return (
                             <div
                                 key={section}
-                                onMouseEnter={() => flipCard(section)}
+                                onMouseEnter={() => hoverCardHandler(section)}
                                 style={{border: '1px solid black', backgroundColor: isHovered ? 'blue' : 'white'}}>
                             </div>
                         )
